@@ -7,6 +7,7 @@ var capitalize = function(string) {
         capital.push(capitalLetter);
     })
     console.log(capital.join(" "));
+    console.log(capital);
 };
 
 capitalize('hallo i am barik.');
@@ -16,9 +17,16 @@ capitalize('hallo i am barik.');
 // Hint: look up Array.prototype.map on MDN and see what arguments the .map callback can take.
 // ex: swapCase('hey girl, lets javascript together sometime') // => "HEY gurl, LETS javascript TOGETHER sometime"
 var swapCase = function(string){
+    capitalize(string);
 
+    console.log(capital);
+    for (i = 1; i < capital.length; i+=2) {
+        capital[i] = capital[i].toLowerCase();
+    }
+    console.log(capital);
 }
 
+swapCase('this is the second question')
 
 
 3.
