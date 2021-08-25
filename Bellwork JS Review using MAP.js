@@ -1,35 +1,34 @@
-// Write a function capitalize that takes a string and uses .map to return the same string in all caps.
+//Global Variables (So they can be reset each time a function is run)
 var capital = [];
+var shiftArr = [];
 
+/* Question 1 */
 var capitalize = function(string) {
+    capital = [];
 
     string.split(" ").map(word => {
         var capitalLetter = word.toUpperCase();
         capital.push(capitalLetter);
     })
     console.log(capital.join(" "));
-};
+}; capitalize('First Question: All caps')
 
-// Now write a new function called swapCase that takes a string of words and uses .map and your newly written capitalize() function to return a string where every other word is in all caps.
+/* Question 2 */
 var swapCase = function(string){
     capitalize(string);
 
     var swapCaps = capital;
-    for (i = 1; i < capital.length; i+=2) {
+    for (i=1; i < capital.length; i+=2) {
         swapCaps[i] = capital[i].toLowerCase();
     }
     console.log(swapCaps.join(" "));
-}
+}; swapCase('Second Question: Alternating caps');
 
-swapCase('this is the second question');
-
-// Write a function shiftLetters that takes a string and uses .map to return an encoded string with each letter shifted down the alphabet by one. Hint: Use Look up the JS functions String.fromCharCode() and String.CharCodeAt() and see if you can use Ascii code to accomplish this.
-// ex. shiftLetters('hello') // => 'ifmmp'
-// ex. (shiftLetters('abcxyz') // => "bcdyz{"
+/* Question 3 */
 var shiftLetters = function(string) {
     string.split('').map((letter) => {
-        letter
-    });
-
-
-}
+        newLetter = letter.charCodeAt(0) + 1;
+        shiftArr.push(String.fromCharCode(newLetter));
+    })
+    console.log(shiftArr.join(''));
+}; shiftLetters('Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz');
